@@ -3,7 +3,7 @@ yamdb_final
 
 
 # бейдж:
-![yamdb_final workflow](https://github.com/JustKarik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+[![yamdb_workflow](https://github.com/JustKarik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/JustKarik/yamdb_final/actions)
 
 
  [![]https://github.com/JustKarik/yamdb_final/blob/master/.github/workflows/yamdb_workflow.yml/badge.svg](https://github.com/JustKarik/yamdb_final/actions)
