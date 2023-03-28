@@ -12,57 +12,6 @@
 
 Проект оформлен с применением контейнерной сборки файлов и позволяет запустить его на локальном компьютере без дополнительных настроек.
 
-### Как запустить проект:
-
-Клонировать репозиторий и перейти в него в командной строке:
-```
-git clone git@github.com:JustKarik/infra_sp2.git
-```
-```
-cd infra_sp2/infra
-```
-
-Создайте файл .env для работы с базой данных и заполните его следующими данными:
-```nano touch .env```
-```
-DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
-DB_NAME=postgres # имя базы данных
-POSTGRES_USER=postgres # логин для подключения к базе данных
-POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)
-DB_HOST=db # название сервиса (контейнера)
-DB_PORT=5432 # порт для подключения к БД 
-```
-
-Собрать и запустить контейнеры:
-```
-docker-compose up -d
-```
-Выполнить миграции:
-```
-docker-compose exec web python manage.py migrate 
-```
-Создать суперпользователя(администратора):
-```
-docker-compose exec web python manage.py createsuperuser
-```
-Собрать статические файлы для оформления страницы:
-```
-docker-compose exec web python manage.py collectstatic --no-input 
-```
-
-## Наполнение базы данных:
-Для загрузки имеющейся базы данных:
-```
-docker-compose exec web python manage.py loaddata dump.json
-```
-Для создания новых публикаций:
-```
-Зайдите на http://localhost/admin/
-```
-```
-Авторизуйтесь под аккаунтом суперпользователя и добавьте новое прозведение
-```
-
 
 ## Технологии
 
